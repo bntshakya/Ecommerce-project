@@ -1,0 +1,19 @@
+<form (ngSubmit) = 'onSubmit()' [formGroup] = 'profileForm'>
+    <mat-form-field>
+        <mat-label>First Name</mat-label> 
+        <input matNativeControl formControlName="firstName">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Last Name</mat-label>
+        <input matNativeControl formControlName="lastName">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matNativeControl type="email" formControlName="email">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matNativeControl type="password" formControlName="password">
+    </mat-form-field>
+    <button mat-raised-button type="submit" color="primary" [disabled]="!profileForm.valid">Register</button>
+</form>
