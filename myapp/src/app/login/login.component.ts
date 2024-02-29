@@ -6,7 +6,7 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  constructor(private formBuilder: FormBuilder){}
+  constructor(private formBuilder: FormBuilder){ }
   profileForm = this.formBuilder.group({
     firstName: ['',Validators.required],
     lastName: ['',Validators.required],
