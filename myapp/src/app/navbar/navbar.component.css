@@ -1,0 +1,7 @@
+.navbar {
+    justify-content: space-between;
+}
+
+nav-wrapper > span {
+    padding-right: 1rem;
+}
