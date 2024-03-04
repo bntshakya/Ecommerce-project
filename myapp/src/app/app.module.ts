@@ -14,8 +14,14 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { HttpClientModule } from '@angular/common/http';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { HomepageComponent } from './homepage/homepage.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { CardComponent } from './card/card.component';
+import {MatCardModule} from '@angular/material/card';
+import { EllipsePipe } from './ellipse.pipe';
+import { DetailsComponent } from './details/details.component';
 @NgModule({
-  declarations: [AppComponent, LoginComponent, NavbarComponent],
+  declarations: [AppComponent, LoginComponent, NavbarComponent, HomepageComponent, CardComponent, EllipsePipe, DetailsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -29,6 +35,9 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatToolbarModule,
     HttpClientModule,
     MatCheckboxModule,
+    MatGridListModule,
+    MatCardModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],
