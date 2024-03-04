@@ -7,8 +7,7 @@ import { Observable } from 'rxjs';
 export class UserService {
   constructor(private http: HttpClient) {}
 
-  public getProducts(): Observable<any> {
-    const url = 'https://fakestoreapi.com/products/category/electronics';
+  public getProducts(url = 'https://fakestoreapi.com/products/category/electronics'): Observable<any> {
     console.log('at user service');
     return this.http.get<any>(url);
   }
