@@ -10,6 +10,8 @@ import { UserService } from '../user.service';
 export class DetailsComponent implements OnInit {
   id?: number;
   private sub: any;
+  // public src: string = '';
+  public product_object : any ;
   constructor(
     private route: ActivatedRoute,
     private userservice: UserService
@@ -18,15 +20,18 @@ export class DetailsComponent implements OnInit {
     this.sub = this.route.params.subscribe((params) => {
       this.id = +params['id'];
     });
-   this.getdetails(); 
+    this.getdetails();
   }
   
 
   getdetails() {
-    const product_info = this.userservice.getProducts(
+    this.userservice.getProducts(
       `https://fakestoreapi.com/products/${this.id}`
     ).subscribe((data)=>{
-      console.log(data);
+      // console.log(data);
+      this.product_object = data;
+      // this.src = this.product_object?.image;
+      // console.log(this.product_objectf);
     });
     // console.log(product_info, 'a');
   }
