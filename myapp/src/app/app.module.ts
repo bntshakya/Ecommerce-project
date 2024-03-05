@@ -8,16 +8,20 @@ import { LoginComponent } from './login/login.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
-import { ReactiveFormsModule } from '@angular/forms';import { NavbarComponent } from './navbar/navbar.component';
+import { MatButtonModule } from '@angular/material/button';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NavbarComponent } from './navbar/navbar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
-
+import { HttpClientModule } from '@angular/common/http';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { HomepageComponent } from './homepage/homepage.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { CardComponent } from './card/card.component';
+import {MatCardModule} from '@angular/material/card';
+import { EllipsePipe } from './ellipse.pipe';
+import { DetailsComponent } from './details/details.component';
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    NavbarComponent
-    ],
+  declarations: [AppComponent, LoginComponent, NavbarComponent, HomepageComponent, CardComponent, EllipsePipe, DetailsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -26,8 +30,14 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatSelectModule,
     MatInputModule,
     MatButtonModule,
+    FormsModule,
     ReactiveFormsModule,
-    MatToolbarModule
+    MatToolbarModule,
+    HttpClientModule,
+    MatCheckboxModule,
+    MatGridListModule,
+    MatCardModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],
