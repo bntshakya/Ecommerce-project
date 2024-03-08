@@ -4,6 +4,7 @@ import { OnInit } from '@angular/core';
 import { Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { TokenstorageService } from '../service/tokenstorage.service';
+import { IsloggedinService } from '../service/isloggedin.service';
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
@@ -13,7 +14,7 @@ export class SigninComponent implements OnInit {
   public form!: FormGroup;
   private email: string = '';
   private password: string = '';
-  constructor(private formbuilder: FormBuilder, private http: HttpClient, private tokenstorage : TokenstorageService) {}
+  constructor(private formbuilder: FormBuilder, private http: HttpClient, private tokenstorage : TokenstorageService,private isloggedin : IsloggedinService) {}
 
   ngOnInit(): void {
     this.form = this.formbuilder.group({
@@ -35,6 +36,7 @@ export class SigninComponent implements OnInit {
     // this.form.reset
     this.http.post('https://fakestoreapi.com/auth/login',{username: 'mor_2314', password: '83r5^_'}).subscribe((token) => {
       this.tokenstorage.savetoken(token);
+      this.isloggedin.isloggedin();
     });
   }
 }
