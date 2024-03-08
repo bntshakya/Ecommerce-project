@@ -20,8 +20,20 @@ import { CardComponent } from './card/card.component';
 import {MatCardModule} from '@angular/material/card';
 import { EllipsePipe } from './ellipse.pipe';
 import { DetailsComponent } from './details/details.component';
+import { SigninComponent } from './signin/signin.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { InterceptorInterceptor } from './interceptor.interceptor';
 @NgModule({
-  declarations: [AppComponent, LoginComponent, NavbarComponent, HomepageComponent, CardComponent, EllipsePipe, DetailsComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    NavbarComponent,
+    HomepageComponent,
+    CardComponent,
+    EllipsePipe,
+    DetailsComponent,
+    SigninComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -37,9 +49,14 @@ import { DetailsComponent } from './details/details.component';
     MatCheckboxModule,
     MatGridListModule,
     MatCardModule,
-    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: InterceptorInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
