@@ -2,6 +2,7 @@
     /* max-width: 400px; */
     height: 450px;
     width: 400px;
+    border: 1px solid red;
     overflow: hidden;
 }
 

@@ -7,27 +7,25 @@
     <mat-grid-tile [colspan]="1" [rowspan]="1"><app-card></app-card></mat-grid-tile>
 </mat-grid-list> -->
 <div class="electronics-container">
-    <div *ngFor="let product of product_array" class="c1">
-        <ng-container *ngIf="product?.category == 'electronics'">
-        <app-card [product]="product"></app-card>
-        </ng-container>
-    </div>
+    <ng-container *ngFor="let product of product_array" class="c1">
+        <app-card [product]="product" *ngIf="product?.category === 'electronics'"></app-card>
+    </ng-container>
 </div>
 
 <div class="electronics-container">
-    <div *ngFor="let product of product_array" class="c2" >
+    <ng-container *ngFor="let product of product_array" class="c2" >
         <app-card [product]="product" *ngIf="product?.category == 'jewelery'"></app-card>
-    </div>
+    </ng-container>
 </div>
 
 <div class="electronics-container">
-    <div *ngFor="let product of product_array">
+    <ng-container *ngFor="let product of product_array">
         <app-card [product]="product" *ngIf="product?.category == 'men\'s clothing'"></app-card>
-    </div>
+    </ng-container>
 </div>
 
 <div class="electronics-container">
-    <div *ngFor="let product of product_array">
+    <ng-container *ngFor="let product of product_array">
         <app-card [product]="product" *ngIf="product?.category == 'women\'s clothing'"></app-card>
-    </div>
+    </ng-container>
 </div>
