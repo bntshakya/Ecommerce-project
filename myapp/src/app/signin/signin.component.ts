@@ -16,7 +16,7 @@ export class SigninComponent implements OnInit {
   private password: string = '';
   constructor(private formbuilder: FormBuilder, private http: HttpClient, private tokenstorage : TokenstorageService,private isloggedin : IsloggedinService) {}
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.form = this.formbuilder.group({
       email: [
         '',
@@ -29,11 +29,9 @@ export class SigninComponent implements OnInit {
     });
   }
 
-  onSubmit() {
+  public onSubmit(): void {
     this.email = this.form.value.email;
     this.password = this.form.value.password;
-    // console.log(this.email, this.password);
-    // this.form.reset
     this.http.post('https://fakestoreapi.com/auth/login',{username: 'mor_2314', password: '83r5^_'}).subscribe((token) => {
       this.tokenstorage.savetoken(token);
       this.isloggedin.isloggedin();
