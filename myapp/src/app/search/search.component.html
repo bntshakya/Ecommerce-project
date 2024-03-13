@@ -1,0 +1,18 @@
+<app-navbar></app-navbar>
+<form [formGroup]="filterparams" (ngSubmit)="onsubmit()">
+<mat-form-field>
+    <mat-label>Min Price</mat-label>
+    <input matNativeControl formControlName = 'minprice' type="number">
+</mat-form-field>
+<mat-form-field>
+    <mat-label>Max Price</mat-label>
+    <input matNativeControl formControlName = 'maxprice' type="number">
+</mat-form-field>
+<div class="categories">
+<input type="checkbox" formControlName = 'mclothing'>Men's Clothing
+<input type="checkbox" formControlName='fclothing'>Women's Clothing
+<input type="checkbox" formControlName='electronics'>Electronics
+<input type="checkbox" formControlName='jewelery'>Jewelery
+</div>
+<button mat-raised-button type="submit" color="primary">Search</button>
+</form>

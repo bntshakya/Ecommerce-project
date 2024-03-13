@@ -1,19 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-// import { UserService } from '../user.service';
+import { UserService } from '../user.service';
 import { ProductarrayService } from '../productarray.service';
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.css'],
 })
-export class HomepageComponent {
-  constructor() { // public productarrayservice: ProductarrayService // public userService: UserService,
-    console.log('at homepage constructor');
+export class HomepageComponent implements OnInit{
+  constructor(public userservice:UserService) { }
+  public product_array: any[] = [];
+
+  ngOnInit(): void {
+    this.userservice.getProducts().subscribe((data) => {
+      this.product_array = data;
+    });
   }
-  // ngOnInit(): void {
-  //   this.userService.getProducts().subscribe((data) => {
-  //     this.productarrayservice.product_array = data;
-  //     console.log(this.productarrayservice.product_array);
-  //   });
-  // }
 }

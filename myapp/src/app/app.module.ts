@@ -17,11 +17,21 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { HomepageComponent } from './homepage/homepage.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { CardComponent } from './card/card.component';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { EllipsePipe } from './ellipse.pipe';
 import { DetailsComponent } from './details/details.component';
+import { SearchComponent } from './search/search.component';
 @NgModule({
-  declarations: [AppComponent, LoginComponent, NavbarComponent, HomepageComponent, CardComponent, EllipsePipe, DetailsComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    NavbarComponent,
+    HomepageComponent,
+    CardComponent,
+    EllipsePipe,
+    DetailsComponent,
+    SearchComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -37,7 +47,7 @@ import { DetailsComponent } from './details/details.component';
     MatCheckboxModule,
     MatGridListModule,
     MatCardModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
