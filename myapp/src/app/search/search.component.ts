@@ -19,10 +19,8 @@ export class SearchComponent implements OnInit {
 
   ngOnInit(): void {
     this.filterparams = this.formbuilder.group({
-      // price : this.formbuilder.group({
       minprice: ['', Validators.pattern('^[0-9]*$')],
       maxprice: ['', Validators.pattern('^[0-9]*$')],
-      // }),
       mclothing: [true],
       fclothing: [true],
       electronics: [true],
@@ -31,15 +29,12 @@ export class SearchComponent implements OnInit {
   }
 
   onsubmit() {
-    // console.log('asdfasf');
     const selectedCategories: string[] = [];
-    if (this.filterparams.value.mclothing)
-      selectedCategories.push('maleclothing');
-    if (this.filterparams.value.fclothing)
-      selectedCategories.push('femaleclothing');
-    if (this.filterparams.value.electronics)
-      selectedCategories.push('electronics');
-    if (this.filterparams.value.jewelery) selectedCategories.push('jewelery');
+    for (const category in this.filterparams.value){
+      if (this.filterparams.value[category]){
+        selectedCategories.push(category);
+      }
+    }
     const queryParams = {
       minprice: this.filterparams.value.minprice,
       maxprice: this.filterparams.value.maxprice,
