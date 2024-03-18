@@ -10,7 +10,6 @@ export class UserService {
   public getProducts(
     url = 'https://fakestoreapi.com/products/'
   ): Observable<any> {
-    console.log('at user service');
     return this.http.get<any>(url);
   }
 }
