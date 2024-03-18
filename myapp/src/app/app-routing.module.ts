@@ -6,6 +6,7 @@ import { SearchComponent } from './search/search.component';
 import { LoginComponent } from './login/login.component';
 import { SigninComponent } from './signin/signin.component';
 import { authGuard } from './guards/auth.guard';
+import { CartComponent } from './cart/cart.component';
 
 const routes: Routes = [
   { path: 'homepage', component: HomepageComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'signin', component: SigninComponent },
   { path: 'search', component: SearchComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'cart', component: CartComponent }, //canActivate: [authGuard] },
 ];
 
 @NgModule({

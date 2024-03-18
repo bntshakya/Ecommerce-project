@@ -5,6 +5,7 @@ import { OnInit } from '@angular/core';
 // import { HomepageComponent } from '../homepage/homepage.component';
 import { ProductarrayService } from '../productarray.service';
 import { FetchproductService } from '../fetchproduct.service';
+import { CartService } from '../service/cart.service';
 
 @Component({
   selector: 'app-card',
@@ -12,6 +13,6 @@ import { FetchproductService } from '../fetchproduct.service';
   styleUrls: ['./card.component.css'],
 })
 export class CardComponent {
-  constructor() {}
-  @Input() product: any;
+  @Input() product: Object
+  constructor(public cartservice: CartService) {}
 }

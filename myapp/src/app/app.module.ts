@@ -25,8 +25,20 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { InterceptorInterceptor } from './interceptor.interceptor';
 import { SearchComponent } from './search/search.component';
 import { CartComponent } from './cart/cart.component';
+import { MatTableModule } from '@angular/material/table';
 @NgModule({
-  declarations: [AppComponent, LoginComponent, NavbarComponent, HomepageComponent, CardComponent, EllipsePipe, DetailsComponent,SigninComponent,SearchComponent, CartComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    NavbarComponent,
+    HomepageComponent,
+    CardComponent,
+    EllipsePipe,
+    DetailsComponent,
+    SigninComponent,
+    SearchComponent,
+    CartComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -43,6 +55,7 @@ import { CartComponent } from './cart/cart.component';
     MatGridListModule,
     MatCardModule,
     HttpClientModule,
+    MatTableModule
   ],
   providers: [
     {
