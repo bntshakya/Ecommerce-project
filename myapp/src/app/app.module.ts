@@ -24,8 +24,9 @@ import { SigninComponent } from './signin/signin.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { InterceptorInterceptor } from './interceptor.interceptor';
 import { SearchComponent } from './search/search.component';
+import { CartComponent } from './cart/cart.component';
 @NgModule({
-  declarations: [AppComponent, LoginComponent, NavbarComponent, HomepageComponent, CardComponent, EllipsePipe, DetailsComponent,SigninComponent,SearchComponent],
+  declarations: [AppComponent, LoginComponent, NavbarComponent, HomepageComponent, CardComponent, EllipsePipe, DetailsComponent,SigninComponent,SearchComponent, CartComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
