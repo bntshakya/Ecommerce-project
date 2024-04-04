@@ -51,9 +51,7 @@ export class SearchComponent implements OnInit {
       queryParams: queryParams,
     });
 
-    // this.product_array = this.searchservice.search();
     this.searchservice.search().subscribe((data) => {
-      // this.product_array = data;
       data.subscribe((data1: any) => {
         this.product_array = data1;
       });
