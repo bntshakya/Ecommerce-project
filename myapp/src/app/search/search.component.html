@@ -16,3 +16,6 @@
 </div>
 <button mat-raised-button type="submit" color="primary">Search</button>
 </form>
+<ng-container *ngFor="let product of product_array">
+    <app-card [product]="product"></app-card>
+</ng-container>
