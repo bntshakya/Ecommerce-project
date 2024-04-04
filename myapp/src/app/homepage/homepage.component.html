@@ -1,5 +1,5 @@
 <app-navbar></app-navbar>
-<div class="electronics-container">
+<!-- <div class="electronics-container">
     <ng-container *ngFor="let product of product_array">
         <app-card [product]="product" *ngIf="product?.category === 'electronics'"></app-card>
     </ng-container>
@@ -21,4 +21,19 @@
     <ng-container *ngFor="let product of product_array">
         <app-card [product]="product" *ngIf="product?.category === 'women\'s clothing'"></app-card>
     </ng-container>
+</div> -->
+<div class="electronics-container">
+    <ng-container *ngFor="let product of product_array">
+        <app-card [product]="product"></app-card>
+    </ng-container>
 </div>
+<mat-paginator [length]="100" [pageSize]="5" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page" (page)="handlepage($event)">
+</mat-paginator>
+<!-- <div class="product-container">
+    <ng-container *ngFor="let product of filteredProducts | paginate: { pageSize: pageSize }">
+        <app-card [product]="product"></app-card>
+    </ng-container>
+    <mat-paginator [length]="filteredProducts.length" [pageSize]="pageSize"
+        (pageChange)="onPaginate($event)"></mat-paginator>
+</div> -->
+
