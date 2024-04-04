@@ -1,4 +1,3 @@
-<p>details works! {{id}}</p>
 <app-navbar></app-navbar>
 <mat-grid-list cols = '2' rowHeight="300px">
 <mat-grid-tile [colspan]=1 [rowspan]=1>
@@ -6,10 +5,10 @@
 </mat-grid-tile>
 <mat-grid-tile [colspan] = 1 [rowspan]=1>
    <ul>
-    <h2><b><li>{{product_object.title}}</li></b></h2>
-    <li>Price : ${{product_object.price}}</li>
-    <li>Category : {{product_object.category}}</li>
-    <li>Description : {{product_object.description}}</li>
+    <h2><b><li>{{product_object?.title}}</li></b></h2>
+    <li>Price : ${{product_object?.price}}</li>
+    <li>Category : {{product_object?.category}}</li>
+    <li>Description : {{product_object?.description}}</li>
    </ul>
 </mat-grid-tile>
 </mat-grid-list>
