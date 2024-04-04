@@ -13,6 +13,6 @@ import { CartService } from '../service/cart.service';
   styleUrls: ['./card.component.css'],
 })
 export class CardComponent {
-  @Input() product: Object
   constructor(public cartservice: CartService) {}
+  @Input() product: any;
 }
