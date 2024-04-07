@@ -25,4 +25,13 @@ export class CartService {
   public getcartvalue():Array<object>{
     return this.products;
   }
+
+  public removefromcart(obj:any):void{
+    const index = this.products.indexOf(obj);
+    if (index > -1){
+      this.products.splice(index,1);
+    }
+  }
+
+
 }

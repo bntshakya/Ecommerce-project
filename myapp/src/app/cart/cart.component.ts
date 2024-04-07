@@ -1,6 +1,8 @@
 import {
+  ChangeDetectorRef,
   Component,
   ElementRef,
+  Input,
   OnChanges,
   OnInit,
   SimpleChanges,
@@ -15,23 +17,16 @@ import { AbstractControl, FormBuilder, FormGroup } from '@angular/forms';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css'],
 })
-export class CartComponent implements OnInit, OnChanges {
+export class CartComponent implements OnInit {
   constructor(
     public cartservice: CartService,
-    public formbuilder: FormBuilder
+    public formbuilder: FormBuilder,
   ) {}
-  // @ViewChild('inputquantity') input : ElementRef<HTMLInputElement>
   ngOnInit(): void {
     this.profileForm = this.formbuilder.group({
       inputquantity: [''],
     });
     this.dataSource = this.cartservice.getcartvalue();
-    console.log(this.dataSource, 'init');
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    this.dataSource = this.cartservice.getcartvalue();
-    console.log('onchanges');
   }
 
   public profileForm!: FormGroup;
@@ -40,22 +35,14 @@ export class CartComponent implements OnInit, OnChanges {
   public updatequantity(obj: any): void {
     obj['quantity'] = this.profileForm.value.inputquantity;
   }
+  public newarray: Array<object> = [];
+
   public remove(obj: any): void {
-    console.log(obj);
-    console.log(this.cartservice.products);
-
-    console.log(this.cartservice.products.indexOf(obj));
-    const index = this.cartservice.products.indexOf(obj);
-    if (index > -1) {
-      this.cartservice.products.splice(index, 1);
-      this.dataSource = this.cartservice.getcartvalue();
-
-      // this.dataSource.splice(index, 1);
-      // this.dataSource.splice(index, 1);
-      console.log(this.dataSource, 'datasource');
-    }
-    // this.dataSource = this.cartservice.getcartvalue();
-    this.ngOnInit();
-    // this.dataSource = this.cartservice.getcartvalue();
+    this.cartservice.products = this.cartservice.products.filter(
+      (data: any) => {
+        return data.id !== obj.id;
+      }
+    );
+    this.dataSource = this.cartservice.products;
   }
 }
