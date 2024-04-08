@@ -13,7 +13,6 @@ export class CartService {
 
   public addtocart(product: any): void {
     if (this.isloggedin.status()) {
-        // console.log(!this.isincart(product),'insideaddtocart');
         this.inCart = false;
         this.products.map((data:any)=>{
           if(data.id === product.id){
@@ -25,15 +24,6 @@ export class CartService {
         product['quantity'] = 1;
         this.products.push(product);
       }
-      
-      // if (!this.isincart(product)) {
-      //   console.log('inside if');
-      //   product['quantity'] = 1;
-      //   this.products.push(product);
-      //   // this.inCart = true;
-      // } else {
-      //   console.log('inside else');
-      // }
     } 
     else {
       this.router.navigate(['/signin']);
@@ -52,12 +42,6 @@ export class CartService {
   }
 
   public isincart(obj: any): boolean{
-    // return this.products.some((data: any) => {
-    //   console.log('dataid', data.id);
-    //   console.log('objid', obj.id);
-    //   console.log(data.id === obj.id);
-    //   data.id === obj.id; // return true even if one instance is found
-    // });
     console.log("herer", obj.id)
     this.products.map((data: any) => {
       console.log('data', data.id)
