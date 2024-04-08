@@ -26,6 +26,7 @@ import { InterceptorInterceptor } from './interceptor.interceptor';
 import { SearchComponent } from './search/search.component';
 import { CartComponent } from './cart/cart.component';
 import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +56,8 @@ import { MatTableModule } from '@angular/material/table';
     MatGridListModule,
     MatCardModule,
     HttpClientModule,
-    MatTableModule
+    MatTableModule,
+    MatPaginatorModule
   ],
   providers: [
     {
