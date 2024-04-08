@@ -10,10 +10,7 @@ export class FetchproductService {
   product_array: any[] = [];
   fetchProduct() {
     this.userservice.getProducts().subscribe((data) => {
-      // console.log(this.productarrayservice.product_array);
       this.product_array = data;
-      console.log(this.product_array);
-      console.log('at fetch product');
     });
     return this.product_array;
   }

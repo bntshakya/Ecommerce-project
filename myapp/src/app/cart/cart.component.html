@@ -1,5 +1,4 @@
 <app-navbar></app-navbar>
-{{ dataSource }}
 <table mat-table [dataSource]="dataSource">
     <ng-container matColumnDef="title">
         <th mat-header-cell *matHeaderCellDef>title</th>
@@ -25,3 +24,4 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row;columns: displayedColumns;"></tr>
 </table>
+<button mat-raised-button (click)="opendialog()">Checkout</button>

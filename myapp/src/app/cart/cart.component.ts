@@ -11,6 +11,8 @@ import {
 import { MatTableModule } from '@angular/material/table';
 import { CartService } from '../service/cart.service';
 import { AbstractControl, FormBuilder, FormGroup } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogComponent } from '../dialog/dialog.component';
 
 @Component({
   selector: 'app-cart',
@@ -21,6 +23,7 @@ export class CartComponent implements OnInit {
   constructor(
     public cartservice: CartService,
     public formbuilder: FormBuilder,
+    public dialog: MatDialog
   ) {}
   ngOnInit(): void {
     this.profileForm = this.formbuilder.group({
@@ -45,4 +48,10 @@ export class CartComponent implements OnInit {
     );
     this.dataSource = this.cartservice.products;
   }
+
+  public opendialog() {
+    const dialogref = this.dialog.open(DialogComponent);
+  }
 }
+
+

@@ -28,6 +28,9 @@ import { CartComponent } from './cart/cart.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import {MatIconModule} from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DialogComponent } from './dialog/dialog.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +43,7 @@ import {MatIconModule} from '@angular/material/icon';
     SigninComponent,
     SearchComponent,
     CartComponent,
+    DialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,7 +63,8 @@ import {MatIconModule} from '@angular/material/icon';
     HttpClientModule,
     MatTableModule,
     MatPaginatorModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule
   ],
   providers: [
     {

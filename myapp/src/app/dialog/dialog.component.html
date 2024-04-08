@@ -1,0 +1,11 @@
+<div *ngIf="productarray.length > 0">
+    <div *ngFor="let product of productarray">
+    {{product.title}}
+    {{product.quantity}}
+    {{product.price}}
+    </div>
+    {{computecost()}}
+</div>
+<div *ngIf="productarray.length === 0">Empty cart</div>
+
+
