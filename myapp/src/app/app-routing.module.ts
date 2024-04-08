@@ -14,12 +14,11 @@ const routes: Routes = [
   {
     path: 'homepage/:id',
     component: DetailsComponent,
-    canActivate: [authGuard],
   },
   { path: 'signin', component: SigninComponent },
   { path: 'search', component: SearchComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'cart', component: CartComponent }, //canActivate: [authGuard] },
+  { path: 'cart', component: CartComponent, canActivate: [authGuard] },
 ];
 
 @NgModule({

@@ -11,8 +11,7 @@
             </p>
         </mat-card-content>
         <mat-card-actions>
-            <button mat-button (click)="cartservice.addtocart(product)">Add To Cart</button>
-            <button mat-button [routerLink]="['/homepage',product?.id]">View</button>
-            <button mat-button [routerLink]="['/cart']">cart</button>
+            <button mat-button (click)="cartservice.addtocart(product)"><mat-icon>add_shopping_cart</mat-icon></button>
+            <button mat-button [routerLink]="['/homepage',product?.id]"><mat-icon>details</mat-icon></button>
         </mat-card-actions>
     </mat-card>
