@@ -30,6 +30,9 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import {MatIconModule} from '@angular/material/icon';
 import { WildcardComponent } from './wildcard/wildcard.component';
 import { AboutComponent } from './about/about.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DialogComponent } from './dialog/dialog.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +45,7 @@ import { AboutComponent } from './about/about.component';
     SigninComponent,
     SearchComponent,
     CartComponent,
+    DialogComponent,
     WildcardComponent,
     AboutComponent,
   ],
@@ -63,7 +67,8 @@ import { AboutComponent } from './about/about.component';
     HttpClientModule,
     MatTableModule,
     MatPaginatorModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule
   ],
   providers: [
     {

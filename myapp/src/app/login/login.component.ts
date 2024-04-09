@@ -14,7 +14,6 @@ import { AuthService } from '../auth.service';
 })
 export class LoginComponent implements OnInit {
   public profileForm!: FormGroup;
-  // public ValidatePassword!: any;
 
   constructor(private formBuilder: FormBuilder, private auth: AuthService) {}
   ngOnInit(): void {
