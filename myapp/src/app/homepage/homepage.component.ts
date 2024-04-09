@@ -11,12 +11,11 @@ export class HomepageComponent implements OnInit {
   constructor(public userservice: UserService) {}
   public product_array: any[] = [];
   public rawdata: any[] = [];
-  // public pageEvent: PageEvent;
   public pageEvent: any;
-  public length = 50;
+  public length = 20;
   public pageSize = 5;
   public pageIndex = 0;
-  public pageSizeOptions = [5, 10, 25];
+  public pageSizeOptions = [5, 10];
 
   handlepage(e: PageEvent) {
     this.pageEvent = e;
@@ -24,12 +23,6 @@ export class HomepageComponent implements OnInit {
     this.pageSize = e.pageSize;
     this.pageIndex = e.pageIndex;
     this.product_array = this.rawdata.slice(
-      e.pageIndex * this.pageSize,
-      e.pageIndex * this.pageSize + this.pageSize
-    );
-    // console.log(this.product_array);
-
-    console.log(
       e.pageIndex * this.pageSize,
       e.pageIndex * this.pageSize + this.pageSize
     );
