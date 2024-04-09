@@ -12,11 +12,11 @@
         <th mat-header-cell *matHeaderCellDef>Quantity</th>
         <td mat-cell *matCellDef="let product">
             {{product.quantity}}
-            <form [formGroup]="profileForm">
+            <form [formGroup]="profileForms[product.id]">
                 <mat-form-field style="width: 100px;">
                     <input matInput style="width: 100px;" type="number" formControlName="inputquantity">
                 </mat-form-field>
-                <button type="submit" mat-raised-button color="primary" (click)="updatequantity(product)" [disabled]="profileForm.invalid">Update</button>
+                <button type="submit" mat-raised-button color="primary" (click)="updatequantity(product)" [disabled]="profileForms[product.id].invalid">Update</button>
                 <button type="submit" mat-raised-button color="warn" (click)="remove(product)">Remove</button>
             </form>
         </td>
