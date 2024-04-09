@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UserService } from '../user.service';
+import { CartService } from '../service/cart.service';
 
 @Component({
   selector: 'app-details',
@@ -13,7 +14,8 @@ export class DetailsComponent implements OnInit {
   public product_object : any ;
   constructor(
     private route: ActivatedRoute,
-    private userservice: UserService
+    private userservice: UserService,
+    public cartservice : CartService
   ) {}
   public ngOnInit(): void {
     this.sub = this.route.params.subscribe((params) => {
