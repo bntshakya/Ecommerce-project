@@ -25,7 +25,7 @@ const routes: Routes = [
   {path:'**',component:WildcardComponent}
 ];
 
-@NgModule({
+@NgModule({ 
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })

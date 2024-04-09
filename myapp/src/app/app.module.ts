@@ -32,6 +32,7 @@ import { WildcardComponent } from './wildcard/wildcard.component';
 import { AboutComponent } from './about/about.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogComponent } from './dialog/dialog.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import { DialogComponent } from './dialog/dialog.component';
     MatTableModule,
     MatPaginatorModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSnackBarModule
   ],
   providers: [
     {

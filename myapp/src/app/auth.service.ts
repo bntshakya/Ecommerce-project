@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +8,6 @@ import { Observable } from 'rxjs';
 export class AuthService {
 
   constructor(private http: HttpClient) { }
-
     register(firstName: string|null|undefined, lastName: string|null|undefined, email: string|null|undefined, password: string|null|undefined) {
     const url = 'https://65ddc0a6dccfcd562f555f42.mockapi.io/register';
 
