@@ -60,5 +60,3 @@ export class CartComponent implements OnInit {
     const dialogref = this.dialog.open(DialogComponent);
   }
 }
-
-

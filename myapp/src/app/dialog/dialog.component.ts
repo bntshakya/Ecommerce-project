@@ -25,7 +25,4 @@ export class DialogComponent {
     this.cartservice.products = [];
     this.cdref.markForCheck();
   }
-
-
-
 }
