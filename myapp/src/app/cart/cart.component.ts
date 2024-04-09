@@ -25,25 +25,29 @@ export class CartComponent implements OnInit {
     public formbuilder: FormBuilder,
     public dialog: MatDialog
   ) {}
+
   ngOnInit(): void {
-    this.profileForm = this.formbuilder.group({
-      inputquantity: [
-        '',
-        [Validators.required, Validators.pattern(/^[1-9][0-9]*$/)],
-      ],
-    });
-    this.cartservice.product$.subscribe(newProducts => {
+    this.cartservice.product$.subscribe((newProducts) => {
       this.dataSource = newProducts;
-    })
+    });
     this.dataSource = this.cartservice.getcartvalue();
+
+    for (const product of this.dataSource) {
+      this.profileForms[product.id] = this.formbuilder.group({
+        inputquantity: [
+          '',
+          [Validators.required, Validators.pattern(/^[1-9][0-9]*$/)],
+        ],
+      });
+    }
   }
 
-  public profileForm!: FormGroup;
-  public dataSource: Array<object> = this.cartservice.getcartvalue();
+  public profileForms: { [id: string]: FormGroup } = {};
+  public dataSource: any[] = this.cartservice.getcartvalue();
   public displayedColumns: string[] = ['title', 'price', 'quantity'];
   public updatequantity(obj: any): void {
-    obj['quantity'] = this.profileForm.value.inputquantity;
-    this.profileForm.reset();
+    obj['quantity'] = this.profileForms[obj.id].value.inputquantity;
+    this.profileForms[obj.id].reset();
   }
   public newarray: Array<object> = [];
 
