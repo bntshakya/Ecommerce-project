@@ -5,6 +5,7 @@ import { Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { TokenstorageService } from '../service/tokenstorage.service';
 import { IsloggedinService } from '../service/isloggedin.service';
+import { Router, RouterEvent } from '@angular/router';
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
@@ -14,7 +15,7 @@ export class SigninComponent implements OnInit {
   public form!: FormGroup;
   private email: string = '';
   private password: string = '';
-  constructor(private formbuilder: FormBuilder, private http: HttpClient, private tokenstorage : TokenstorageService,private isloggedin : IsloggedinService) {}
+  constructor(private formbuilder: FormBuilder, private http: HttpClient, private tokenstorage : TokenstorageService,private isloggedin : IsloggedinService,public router:Router) {}
 
   public ngOnInit(): void {
     this.form = this.formbuilder.group({
@@ -36,5 +37,7 @@ export class SigninComponent implements OnInit {
       this.tokenstorage.savetoken(token);
       this.isloggedin.isloggedin();
     });
+    this.form.reset();
+    this.router.navigate(['/homepage']);
   }
 }
