@@ -28,6 +28,8 @@ import { CartComponent } from './cart/cart.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import {MatIconModule} from '@angular/material/icon';
+import { WildcardComponent } from './wildcard/wildcard.component';
+import { AboutComponent } from './about/about.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +42,8 @@ import {MatIconModule} from '@angular/material/icon';
     SigninComponent,
     SearchComponent,
     CartComponent,
+    WildcardComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,

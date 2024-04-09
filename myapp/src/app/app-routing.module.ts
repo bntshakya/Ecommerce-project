@@ -7,6 +7,8 @@ import { LoginComponent } from './login/login.component';
 import { SigninComponent } from './signin/signin.component';
 import { authGuard } from './guards/auth.guard';
 import { CartComponent } from './cart/cart.component';
+import { WildcardComponent } from './wildcard/wildcard.component';
+import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
   { path: 'homepage', component: HomepageComponent },
@@ -19,6 +21,8 @@ const routes: Routes = [
   { path: 'search', component: SearchComponent },
   { path: 'login', component: LoginComponent },
   { path: 'cart', component: CartComponent, canActivate: [authGuard] },
+  {path:'about',component:AboutComponent},
+  {path:'**',component:WildcardComponent}
 ];
 
 @NgModule({
