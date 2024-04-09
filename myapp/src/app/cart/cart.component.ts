@@ -29,6 +29,9 @@ export class CartComponent implements OnInit {
     this.profileForm = this.formbuilder.group({
       inputquantity: [''],
     });
+    this.cartservice.product$.subscribe(newProducts => {
+      this.dataSource = newProducts;
+    })
     this.dataSource = this.cartservice.getcartvalue();
   }
 

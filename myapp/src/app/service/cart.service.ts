@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { IsloggedinService } from './isloggedin.service';
 import { Router, RouterLink } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -10,6 +11,12 @@ export class CartService {
   public products: Array<object> = [];
   public editedproduct: Array<object> = [];
   public inCart: boolean = false
+  private productSubject = new BehaviorSubject<any[]>([]);
+  product$ = this.productSubject.asObservable();
+
+  public updateProducts(newProducts:any[]){
+    this.productSubject.next(newProducts);
+  }
 
   public addtocart(product: any): void {
     if (this.isloggedin.status()) {
