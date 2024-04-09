@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: 'cart', component: CartComponent, canActivate: [authGuard] },
 ];
 
-@NgModule({
+@NgModule({ 
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
