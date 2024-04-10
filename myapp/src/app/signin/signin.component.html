@@ -1,5 +1,6 @@
 <app-navbar></app-navbar>
-<form (ngSubmit)='onSubmit()' [formGroup]='form'>
+<form (ngSubmit)='onSubmit()' [formGroup]='form' class="loginform">
+<h2>Login</h2>
 <mat-form-field>
     <mat-label>Email</mat-label>
     <input matNativeControl type="email" formControlName="email">
@@ -8,6 +9,6 @@
     <mat-label>Password</mat-label>
     <input matNativeControl type="password" formControlName="password">
 </mat-form-field>
-<button mat-raised-button type="submit" color="primary" [disabled]="form.invalid">Login</button>
-Create a new account ? <a [routerLink]="['/login']">Register</a>
+<button mat-raised-button type="submit" color="primary" [disabled]="form.invalid" class="login-btn">Login</button>
+<div>Create a new account ? <a [routerLink]="['/login']">Register</a></div>
 </form>

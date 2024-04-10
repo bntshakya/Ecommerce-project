@@ -1,5 +1,6 @@
 <app-navbar></app-navbar>
-<mat-grid-list cols = '2' rowHeight="300px">
+<div *ngIf="!isloading">
+<mat-grid-list cols = '2' rowHeight="400px">
 <mat-grid-tile [colspan]=1 [rowspan]=1>
     <img [src]="product_object?.image" style="width: 30%;">
 </mat-grid-tile>
@@ -9,6 +10,11 @@
     <li>Price : ${{product_object?.price}}</li>
     <li>Category : {{product_object?.category}}</li>
     <li>Description : {{product_object?.description}}</li>
+    <button mat-raised-button color="primary" class="cart-button" (click)="cartservice.addtocart(product_object)">Add to Cart</button>
    </ul>
 </mat-grid-tile>
 </mat-grid-list>
+</div>
+<div class="bar-container" *ngIf="isloading">
+    <mat-progress-bar mode="buffer" class="bar"></mat-progress-bar>
+</div>

@@ -54,6 +54,30 @@ export class SigninComponent implements OnInit {
             this.isDataAvailable = true;
           }
         });
+            if (this.isDataAvailable) {
+              this.http
+                .post('https://fakestoreapi.com/auth/login', {
+                  username: 'mor_2314',
+                  password: '83r5^_',
+                })
+                .subscribe((token) => {
+                  this.tokenstorage.savetoken(token);
+                  this.isloggedin.isloggedin();
+                });
+              this.form.reset();
+              this.router.navigate(['/homepage']);
+              this.snackbar.open('Login Successful', 'Dismiss', {
+                horizontalPosition: 'center',
+                verticalPosition: 'top',
+                duration: 2000,
+              });
+            } else {
+              this.snackbar.open('Incorrect Credentials', 'Dismiss', {
+                horizontalPosition: 'center',
+                verticalPosition: 'top',
+                duration: 2000,
+              });
+            }
       });
   }
 
@@ -61,31 +85,6 @@ export class SigninComponent implements OnInit {
     this.email = this.form.value.email;
     this.password = this.form.value.password;
     this.getvalue();
-    if (this.isDataAvailable) {
-      this.http
-        .post('https://fakestoreapi.com/auth/login', {
-          username: 'mor_2314',
-          password: '83r5^_',
-        })
-        .subscribe((token) => {
-          this.tokenstorage.savetoken(token);
-          this.isloggedin.isloggedin();
-        });
-      this.form.reset();
-      this.router.navigate(['/homepage']);
-      this.snackbar.open('Login Successful','Dismiss',{
-        horizontalPosition: 'center',
-        verticalPosition:"top",
-        duration : 2000
-      })
-    }
-    else {
-       this.snackbar.open('Incorrect Credentials', 'Dismiss', {
-         horizontalPosition: 'center',
-         verticalPosition: 'top',
-         duration: 2000,
-       });
 
-    }
   }
 }
