@@ -57,5 +57,8 @@ export class LoginComponent implements OnInit {
       this.profileForm.value.password
     );
     this.profileForm.reset();
+    this.profileForm.markAsPristine();
+    this.profileForm.markAsUntouched();
+    this.profileForm.updateValueAndValidity();
   }
 }

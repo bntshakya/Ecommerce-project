@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IsloggedinService } from '../service/isloggedin.service';
 import { MatDialog } from '@angular/material/dialog';
 import { LogoutdialogComponent } from '../logoutdialog/logoutdialog.component';
+import { CartService } from '../service/cart.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,7 +10,7 @@ import { LogoutdialogComponent } from '../logoutdialog/logoutdialog.component';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit{
-  constructor(public isloggedin:IsloggedinService,public dialog:MatDialog){}
+  constructor(public isloggedin:IsloggedinService,public dialog:MatDialog,public cartservice:CartService){}
   public menuopen : boolean = false;
   ngOnInit(): void {
     this.menuopen = false;
@@ -26,5 +27,4 @@ export class NavbarComponent implements OnInit{
       width:'500px'
     })
   }
-
 }

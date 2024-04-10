@@ -12,10 +12,9 @@
 
 @media (max-width:650px) {
     .loginform mat-form-field {
-        width: 100%;
+        width: 80%;
     }
 }
-
 
 .register-btn{
     margin-top: 10px;

@@ -37,6 +37,7 @@ import {PaginatorModule} from 'primeng/paginator'
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { LogoutdialogComponent } from './logoutdialog/logoutdialog.component';
+import { MatBadgeModule } from '@angular/material/badge';
 
 
 @NgModule({
@@ -79,7 +80,8 @@ import { LogoutdialogComponent } from './logoutdialog/logoutdialog.component';
     MatSnackBarModule,
     PaginatorModule,
     MatProgressSpinnerModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatBadgeModule
   ],
   providers: [
     {
