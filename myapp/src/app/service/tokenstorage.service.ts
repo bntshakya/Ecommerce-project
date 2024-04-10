@@ -8,4 +8,8 @@ export class TokenstorageService {
   savetoken(token: any) {
     sessionStorage.setItem('token_fakestore', token['token']);
   }
+
+  removetoken(){
+    sessionStorage.removeItem('token_fakestore');
+  }
 }
