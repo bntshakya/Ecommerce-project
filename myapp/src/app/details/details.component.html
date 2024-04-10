@@ -1,4 +1,5 @@
 <app-navbar></app-navbar>
+<div *ngIf="!isloading">
 <mat-grid-list cols = '2' rowHeight="400px">
 <mat-grid-tile [colspan]=1 [rowspan]=1>
     <img [src]="product_object?.image" style="width: 30%;">
@@ -13,3 +14,7 @@
    </ul>
 </mat-grid-tile>
 </mat-grid-list>
+</div>
+<div class="bar-container" *ngIf="isloading">
+    <mat-progress-bar mode="buffer" class="bar"></mat-progress-bar>
+</div>

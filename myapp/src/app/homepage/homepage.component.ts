@@ -1,14 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { UserService } from '../user.service';
 import { ProductarrayService } from '../productarray.service';
-import { PageEvent } from '@angular/material/paginator';
+import { MatPaginator, PageEvent } from '@angular/material/paginator';
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.css'],
 })
-export class HomepageComponent implements OnInit {
+export class HomepageComponent implements OnInit{
   constructor(public userservice: UserService) {}
+  public isloading:boolean = true;
   public product_array: any[] = [];
   public rawdata: any[] = [];
   public pageEvent: any;
@@ -32,6 +33,9 @@ export class HomepageComponent implements OnInit {
     this.userservice.getProducts().subscribe((data) => {
       this.rawdata = data;
       this.product_array = data.slice(0, this.pageSize);
+      setTimeout(() => {
+        this.isloading = false;
+      }, 1000);   
     });
   }
 }

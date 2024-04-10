@@ -1,5 +1,6 @@
 <app-navbar></app-navbar>
-<form (ngSubmit) = 'onSubmit()' [formGroup] = 'profileForm'>
+<form (ngSubmit) = 'onSubmit()' [formGroup] = 'profileForm' class="loginform">
+    <h2>Register</h2>
     <mat-form-field>
         <mat-label>First Name</mat-label> 
         <input matNativeControl formControlName="firstName">
@@ -20,7 +21,8 @@
         <mat-label>Confirm Password</mat-label>
         <input matNativeControl type="password" formControlName="confirm_password">
     </mat-form-field>
-    <input type="checkbox" formControlName = 'terms'> I agree to terms and conditions
-    <button mat-raised-button type="submit" color="primary" [disabled]="!profileForm?.valid">Register</button>
-    Already have an account ? <a [routerLink]="['/signin']">signin</a>
+    <div><input type="checkbox" formControlName = 'terms'> I agree to terms and conditions</div>
+    <div>Already have an account ? <a [routerLink]="['/signin']">Signin</a></div>
+    <button mat-raised-button type="submit" color="primary" [disabled]="!profileForm?.valid" class="register-btn">Register</button>
+    
 </form>

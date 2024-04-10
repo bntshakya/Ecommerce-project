@@ -3,7 +3,19 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
-/* .c1{
-    background: red;
-} */
+}
+
+.bar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.bar {
+    width: 80%;
 }

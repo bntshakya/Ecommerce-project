@@ -17,6 +17,8 @@ export class SearchComponent implements OnInit {
     private route: ActivatedRoute,
     public searchservice: SearchService
   ) {}
+  public isloading:boolean = false;
+  public click:boolean = false;
   public filterparams!: FormGroup;
   public product_array: object[] = [];
 
@@ -29,11 +31,12 @@ export class SearchComponent implements OnInit {
       electronics: [true],
       jewelery: [true],
     });
+    this.click = false;
   }
 
   public onsubmit(): void {
-    console.log('onsubmit');
-
+    this.isloading = true;
+    this.click = true;
     const selectedCategories: string[] = [];
     for (const category in this.filterparams.value) {
       if (this.filterparams.value[category]) {
@@ -56,5 +59,10 @@ export class SearchComponent implements OnInit {
         this.product_array = data1;
       });
     });
+    this.click = true;
+    setTimeout(() => {
+      this.isloading = false;
+    }, 1800);
+
   }
 }
