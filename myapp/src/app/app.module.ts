@@ -36,6 +36,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {PaginatorModule} from 'primeng/paginator'
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { LogoutdialogComponent } from './logoutdialog/logoutdialog.component';
 
 
 @NgModule({
@@ -53,6 +54,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     DialogComponent,
     WildcardComponent,
     AboutComponent,
+    LogoutdialogComponent,
   ],
   imports: [
     BrowserModule,
