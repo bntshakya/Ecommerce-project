@@ -38,6 +38,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { LogoutdialogComponent } from './logoutdialog/logoutdialog.component';
 import { MatBadgeModule } from '@angular/material/badge';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 
 
 @NgModule({
@@ -89,6 +90,10 @@ import { MatBadgeModule } from '@angular/material/badge';
       useClass: InterceptorInterceptor,
       multi: true,
     },
+     { 
+      provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, 
+      useValue: { appearance: 'outline' } 
+}
   ],
   bootstrap: [AppComponent],
 })

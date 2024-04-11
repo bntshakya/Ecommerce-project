@@ -13,10 +13,10 @@ export class HomepageComponent implements OnInit{
   public product_array: any[] = [];
   public rawdata: any[] = [];
   public pageEvent: any;
-  public length = 20;
-  public pageSize = 5;
+  public length = 24;
+  public pageSize = 6;
   public pageIndex = 0;
-  public pageSizeOptions = [5, 10];
+  public pageSizeOptions = [6, 9];
 
   handlepage(e: PageEvent) {
     this.pageEvent = e;

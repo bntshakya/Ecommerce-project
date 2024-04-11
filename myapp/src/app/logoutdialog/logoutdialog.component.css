@@ -1,6 +1,16 @@
-.logout-dialog{
+.logout-dialog {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    height: 100%;
+}
+
+.logout-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.logout-buttons button {
+    margin: 0 10px;
 }
