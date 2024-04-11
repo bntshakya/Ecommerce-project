@@ -17,17 +17,17 @@ export class CartService {
   public updateProducts(newProducts:any[]){
     this.productSubject.next(newProducts);
   }
-
+//this.isloggedin.status()
   public addtocart(product: any): void {
-    if (this.isloggedin.status()) {
+    if (true) {
         this.inCart = false;
         this.products.map((data:any)=>{
           if(data.id === product.id){
             this.inCart = true;
           }
         }
-      )
-      if(!this.inCart){
+      )//!this.inCart
+      if(true){
         product['quantity'] = 1;
         this.products.push(product);
       }

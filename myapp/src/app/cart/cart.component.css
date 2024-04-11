@@ -5,3 +5,13 @@ td form {
     flex-wrap: wrap;
     margin: 0;
 }
+
+.cart-card{
+    max-width: 400px;
+    max-height: 400px;
+}
+
+mat-card image{
+    width: 100%;
+    height: 0%;
+}
