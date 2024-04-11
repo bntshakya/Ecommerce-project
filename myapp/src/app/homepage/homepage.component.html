@@ -1,0 +1,15 @@
+<app-navbar></app-navbar>
+<div *ngIf="!isloading">
+    <div class="electronics-container">
+        <ng-container *ngFor="let product of product_array">
+            <app-card [product]="product"></app-card>
+        </ng-container>
+    </div>
+    <mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" (page)="handlepage($event)">
+    </mat-paginator>
+</div>
+<div class="bar-container" *ngIf="isloading">
+    <mat-progress-bar mode="buffer" class="bar"></mat-progress-bar>
+</div>
+
+

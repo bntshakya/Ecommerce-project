@@ -1,0 +1,25 @@
+<mat-toolbar class="navbar" color="primary">
+    <div class="nav-title">E-commerce</div>
+    <div class="nav-wrapper" *ngIf="!menuopen">
+        <button mat-flat-button class="nav-home" color="primary" [routerLink]="['/homepage']">Home</button>
+        <button mat-flat-button class="nav-home" color="primary" [routerLink]="['/search']">Search</button>
+        <button mat-flat-button class="nav-home" color="primary" [routerLink]="['/cart']" matBadge={{cartservice.products.length}} matBadgeColor="warn" *ngIf="isloggedin.status()">Cart</button>
+        <button mat-flat-button class="nav-home" color="primary" [routerLink]="['/signin']"
+            *ngIf="!isloggedin.status()">Login</button>
+        <button mat-flat-button class="nav-home" color="primary" [routerLink]="['/about']">About</button>
+        <button mat-flat-button class="nav-home" color="primary" (click)="opendialog()" *ngIf="isloggedin.status()">Logout</button>
+    </div>
+    <div class="nav-wrapper-small" *ngIf="menuopen">
+        <button mat-stroked-button class="nav-home" color="primary" [routerLink]="['/homepage']">Home</button>
+        <button mat-stroked-button class="nav-home" color="primary" [routerLink]="['/search']">Search</button>
+        <button mat-stroked-button class="nav-home" color="primary" [routerLink]="['/cart']" matBadge={{cartservice.products.length}} matBadgeColor="warn" *ngIf="isloggedin.status()">Cart</button>
+        <button mat-stroked-button class="nav-home" color="primary" [routerLink]="['/signin']"
+            *ngIf="!isloggedin.status()">Login</button>
+        <button mat-stroked-button class="nav-home" color="primary" [routerLink]="['/about']">About</button>
+        <button mat-stroked-button class="nav-home" color="primary" (click)="opendialog()"
+            *ngIf="isloggedin.status()">Logout</button>
+    </div>
+    <button mat-icon-button class="menu-btn" (click)="toggle()">
+        <mat-icon>menu</mat-icon>
+    </button>
+</mat-toolbar>

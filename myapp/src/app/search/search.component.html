@@ -1,0 +1,27 @@
+<app-navbar></app-navbar>
+<form [formGroup]="filterparams" (ngSubmit)="onsubmit()">
+<mat-form-field>
+    <mat-label>Min Price</mat-label>
+    <input matNativeControl formControlName = 'minprice' type="number" min="0">
+</mat-form-field>
+<mat-form-field>
+    <mat-label>Max Price</mat-label>
+    <input matNativeControl formControlName = 'maxprice' type="number" min="0">
+</mat-form-field>
+<div class="categories">
+<input type="checkbox" formControlName = 'mclothing'>Men's Clothing
+<input type="checkbox" formControlName='fclothing'>Women's Clothing
+<input type="checkbox" formControlName='electronics'>Electronics
+<input type="checkbox" formControlName='jewelery'>Jewelery
+</div>
+<button mat-raised-button type="submit" color="primary" [disabled]="filterparams.invalid">Search</button>
+</form>
+<div class="card-container" *ngIf="!isloading">
+    <ng-container *ngFor="let product of product_array">
+        <app-card [product]="product"></app-card>
+    </ng-container>
+    <p *ngIf="product_array.length === 0 && click" class="no-items">No Items Found</p>
+</div>
+<div class="bar-container" *ngIf="isloading">
+    <mat-progress-bar mode="buffer" class="bar"></mat-progress-bar>
+</div>
