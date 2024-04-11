@@ -63,7 +63,10 @@ export class CartComponent implements OnInit {
   }
 
   public opendialog() {
-    const dialogref = this.dialog.open(DialogComponent);
+    const dialogref = this.dialog.open(DialogComponent, {
+      height: '150px',
+      width: '500px',
+    });
   }
 
   public toggle(id:string) {

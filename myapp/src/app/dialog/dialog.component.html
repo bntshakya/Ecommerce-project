@@ -13,8 +13,10 @@
     </table>
 
     Total cost : ${{computecost()|number:'1.2-2'}}<br>
-    <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
-    <button mat-raised-button color="primary" (click)="pay()">Pay</button>
+    <div class="button-container">
+        <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+        <button mat-raised-button color="primary" (click)="pay()">Pay</button>
+    </div>
 </div>
 <div *ngIf="productarray.length === 0">Empty cart</div>
 
