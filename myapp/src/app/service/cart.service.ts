@@ -17,17 +17,16 @@ export class CartService {
   public updateProducts(newProducts:any[]){
     this.productSubject.next(newProducts);
   }
-//this.isloggedin.status()
   public addtocart(product: any): void {
-    if (true) {
+    if (this.isloggedin.status()) {
         this.inCart = false;
         this.products.map((data:any)=>{
           if(data.id === product.id){
             this.inCart = true;
           }
         }
-      )//!this.inCart
-      if(true){
+      )
+      if (!this.inCart) {
         product['quantity'] = 1;
         this.products.push(product);
       }
@@ -49,9 +48,7 @@ export class CartService {
   }
 
   public isincart(obj: any): boolean{
-    console.log("herer", obj.id)
     this.products.map((data: any) => {
-      console.log('data', data.id)
       if(data.id === obj.id) {
         this.inCart = true
       }

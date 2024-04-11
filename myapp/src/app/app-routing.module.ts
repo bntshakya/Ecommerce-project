@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'signin', component: SigninComponent },
   { path: 'search', component: SearchComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'cart', component: CartComponent, },
+  { path: 'cart', component: CartComponent, canActivate: [authGuard] },
   {path:'about',component:AboutComponent},
   {path:'**',component:WildcardComponent}
 ];

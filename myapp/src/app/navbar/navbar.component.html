@@ -3,7 +3,7 @@
     <div class="nav-wrapper" *ngIf="!menuopen">
         <button mat-flat-button class="nav-home" color="primary" [routerLink]="['/homepage']">Home</button>
         <button mat-flat-button class="nav-home" color="primary" [routerLink]="['/search']">Search</button>
-        <button mat-flat-button class="nav-home" color="primary" [routerLink]="['/cart']" matBadge={{cartservice.products.length}} matBadgeColor="warn" *ngIf="true">Cart</button>
+        <button mat-flat-button class="nav-home" color="primary" [routerLink]="['/cart']" matBadge={{cartservice.products.length}} matBadgeColor="warn" *ngIf="isloggedin.status()">Cart</button>
         <button mat-flat-button class="nav-home" color="primary" [routerLink]="['/signin']"
             *ngIf="!isloggedin.status()">Login</button>
         <button mat-flat-button class="nav-home" color="primary" [routerLink]="['/about']">About</button>
